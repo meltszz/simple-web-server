@@ -7,6 +7,8 @@ import java.sql.SQLOutput;
 
 public class Server {
     private final int SERVER_PORT = 8080;
+    private final int REQUEST_TYPE_COL = 0;
+    private final int REQUEST_TYPE_ROW = 0;
 
     private ServerSocket serverSocket;
     private Socket clientSocket;
@@ -67,12 +69,14 @@ public class Server {
     }
 
     private void handleRequest() throws IOException {
+        System.out.println("> Reading request...");
         String request = "";
-        String line = "";
-        while ((line = req.readLine()) != null) {
+        String line = req.readLine();
+        while (line != null && !line.isEmpty()) {
             request += line + "\n";
+            line = req.readLine();
+            System.out.println(line + "\n");
         }
-
-        System.out.println(request);
+        System.out.println("# Request read");
     }
 }
