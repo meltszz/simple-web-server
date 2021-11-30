@@ -8,4 +8,8 @@ public class ResponseHeaders {
     public static String ok() {
         return  "HTTP/1.1 200 OK";
     }
+
+    public static String notImplemented() {
+        return  "HTTP/1.1 501 Not Implemented";
+    }
 }
