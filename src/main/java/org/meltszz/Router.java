@@ -1,14 +1,15 @@
 package org.meltszz;
 
 import java.util.HashMap;
-import java.util.Map;
-
-import static java.util.Map.entry;
 
 public class Router {
-    private Map<String, String> routes = Map.ofEntries(
-          entry("/", "public/pages/home/")
-    );
+    private final String PAGES_PATH = "public/pages";
+    private HashMap<String, String> routes;
+
+    public Router() {
+        routes = new HashMap<>();
+        routes.put("/", PAGES_PATH + "/" + "home");
+    }
 
     public String getRouteURL(String route) {
         return hasRoute(route) ? routes.get(route) : "";
