@@ -1,15 +1,23 @@
 package org.meltszz;
 
 public class ResponseHeaders {
-    public static String notFound() {
-        return  "HTTP/1.1 404 Not Found";
+    private static ResponseHeaders instance;
+
+    public final String NOT_FOUND = "HTTP/1.1 404 Not Found";
+
+    private ResponseHeaders() {
     }
 
-    public static String ok() {
-        return  "HTTP/1.1 200 OK";
+    public static ResponseHeaders getInstance() {
+        if (instance == null) {
+            instance = new ResponseHeaders();
+        }
+
+        return instance;
     }
 
-    public static String notImplemented() {
-        return  "HTTP/1.1 501 Not Implemented";
+    public void hello() {
+
     }
+
 }
