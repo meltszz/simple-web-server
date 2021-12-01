@@ -10,4 +10,8 @@ public enum DocumentType {
     DocumentType(String documentType) {
         this.documentType = documentType;
     }
+
+    public String getValue() {
+        return this.documentType;
+    }
 }
