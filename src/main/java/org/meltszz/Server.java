@@ -101,5 +101,27 @@ public class Server {
             return;
         }
         System.out.println("# Request OK!\n");
+
+        String header = "";
+        String routeURL = router.getRouteURL(requestRoute);
+        System.out.println(routeURL);
+        if(requestRoute.equals("/")) {
+            header = ResponseHeaders.getInstance().documentHeader(DocumentType.HTML, routeURL);
+            resp.write(header);
+            resp.flush();
+            resp.close();
+        }
+        if(requestRoute.equals("/public/pages/home/style.css")) {
+            header = ResponseHeaders.getInstance().documentHeader(DocumentType.CSS, routeURL);
+            resp.write(header);
+            resp.flush();
+            resp.close();
+        }
+        if(requestRoute.equals("/public/pages/home/script.js")) {
+            header = ResponseHeaders.getInstance().documentHeader(DocumentType.JS, routeURL);
+            resp.write(header);
+            resp.flush();
+            resp.close();
+        }
     }
 }
