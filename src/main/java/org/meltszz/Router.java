@@ -11,6 +11,9 @@ public class Router {
         routes = new HashMap<>();
         routes.put("/", PAGES_PATH + "/" + "home");
         routes.put("/favicon", IMG_PATH + "/" + "favicon.ico");
+
+        routes.put("/public/pages/home/style.css", PAGES_PATH + "/" + "style.css");
+        routes.put("/public/pages/home/style.js", PAGES_PATH + "/" + "script.js");
     }
 
     public String getRouteURL(String route) {
