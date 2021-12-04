@@ -40,7 +40,7 @@ public class ResponseHeaders {
 
         if (documentType == DocumentType.CSS) {
             char[] fileBuffer = new char[DOCUMENT_MAX_SIZE];
-            FileReader documentReader = new FileReader(documentPath + "/" + "style.css");
+            FileReader documentReader = new FileReader(documentPath);
             int fileLength = documentReader.read(fileBuffer);
 
             String documentContent = new String(fileBuffer);
@@ -52,7 +52,7 @@ public class ResponseHeaders {
 
         if (documentType == DocumentType.JS) {
             char[] fileBuffer = new char[DOCUMENT_MAX_SIZE];
-            FileReader documentReader = new FileReader(documentPath + "/" + "script.js");
+            FileReader documentReader = new FileReader(documentPath);
             int fileLength = documentReader.read(fileBuffer);
 
             String documentContent = new String(fileBuffer);
