@@ -12,8 +12,8 @@ public class Router {
         routes.put("/", PAGES_PATH + "/" + "home");
         routes.put("/favicon", IMG_PATH + "/" + "favicon.ico");
 
-        routes.put("/public/pages/home/style.css", PAGES_PATH + "/" + "style.css");
-        routes.put("/public/pages/home/style.js", PAGES_PATH + "/" + "script.js");
+        routes.put("/public/pages/home/style.css", PAGES_PATH + "/home/" + "style.css");
+        routes.put("/public/pages/home/script.js", PAGES_PATH + "/home/" + "script.js");
     }
 
     public String getRouteURL(String route) {
