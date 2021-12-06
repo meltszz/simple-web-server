@@ -1,4 +1,4 @@
-package org.meltszz;
+package org.meltszz.content;
 
 public enum DocumentType {
     HTML("text/html"),
