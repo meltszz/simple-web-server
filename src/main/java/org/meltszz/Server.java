@@ -1,5 +1,7 @@
 package org.meltszz;
 
+import org.meltszz.content.DocumentType;
+
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -111,13 +113,13 @@ public class Server {
             resp.flush();
             resp.close();
         }
-        if(requestRoute.equals("/public/pages/home/style.css")) {
+        if(requestRoute.equals("/public/css/style.css")) {
             header = ResponseHeaders.getInstance().documentHeader(DocumentType.CSS, routeURL);
             resp.write(header);
             resp.flush();
             resp.close();
         }
-        if(requestRoute.equals("/public/pages/home/script.js")) {
+        if(requestRoute.equals("/public/js/script.js")) {
             header = ResponseHeaders.getInstance().documentHeader(DocumentType.JS, routeURL);
             resp.write(header);
             resp.flush();
